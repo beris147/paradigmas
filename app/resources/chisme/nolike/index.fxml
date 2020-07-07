@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@styles/style.css" xmlns="http://javafx.com/javafx/8.0.251" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chisme.nolike.controllers.IndexController">
+   <center>
+      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab text="Noticias">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView fx:id="newsList" layoutY="30.0" prefHeight="305.0" prefWidth="391.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="70.0" />
+                        <Label layoutX="528.6" layoutY="25.0" prefHeight="32.0" prefWidth="46.0" text="Página:" AnchorPane.rightAnchor="225.0" AnchorPane.topAnchor="25.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="654.8" layoutY="25.0" prefHeight="32.0" prefWidth="59.0" text="Cantidad:" AnchorPane.rightAnchor="86.0" AnchorPane.topAnchor="25.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="14.0" layoutY="12.0" mnemonicParsing="false" onAction="#createNews" prefHeight="30.0" prefWidth="82.0" text="Añadir" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="25.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Spinner fx:id="pagesSpinner" layoutX="579.6" layoutY="28.0" onMouseReleased="#initializeNewsList" prefHeight="26.0" prefWidth="58.0" AnchorPane.rightAnchor="162.0" />
+                        <Spinner fx:id="limitSpinner" layoutX="724.0" layoutY="27.0" onMouseReleased="#newLimit" prefHeight="26.0" prefWidth="58.0" AnchorPane.rightAnchor="20.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Categorías">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView fx:id="categoriesList" layoutX="212.0" layoutY="119.0" prefHeight="305.0" prefWidth="391.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="70.0" />
+                        <Button layoutX="29.0" layoutY="25.0" mnemonicParsing="false" onAction="#createCategory" prefHeight="30.0" prefWidth="82.0" text="Añadir" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="25.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Anuncios">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView fx:id="adsList" prefHeight="544.0" prefWidth="800.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="70.0" />
+                        <Button mnemonicParsing="false" onAction="#createAd" prefHeight="30.0" prefWidth="82.0" text="Añadir" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="25.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+   <top>
+      <Button mnemonicParsing="false" onAction="#logout" prefHeight="26.0" prefWidth="73.0" text="Salir" BorderPane.alignment="TOP_RIGHT" />
+   </top>
+</BorderPane>
